@@ -189,7 +189,10 @@ public class Robot extends TimedRobot {
     int i = RobotController.getCommsDisableCount();
     SmartDashboard.putNumber("RIO/comms disabled count", i);
     if(i > 0)
+    {
+      commsDisabled.setText("RIO reporting comms issue with DS! Count: "+i);
       commsDisabled.set(true);
+    }
 
     // Battery voltage
     SmartDashboard.putNumber("RIO/Battery voltage", RobotController.getBatteryVoltage());
